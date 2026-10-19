@@ -1295,7 +1295,7 @@ fn main() {
             (config::TestTime::Night, DayNight::Real24h) => 23,
         };
     }
-    let mut seed = fresh_run_seed();
+    let seed = fresh_run_seed();
     let mut show = Show::new(&archive, &palette, 640, 480, director, clock, seed);
     show.set_holiday_animations(&archive, cfg.holiday_animations);
     show.set_holiday_override(
@@ -3003,6 +3003,9 @@ fn scene_info_lines(text: &str, max_chars: usize) -> Vec<String> {
 /// Draw the friendly scene name and description in the selected corner of
 /// the animation. The panel is blended with the picture rather than being an
 /// opaque dialog; the scene stays visible behind it.
+// The rendering inputs are deliberately explicit at the call sites: grouping
+// them would just create a one-use data carrier around borrowed frame state.
+#[allow(clippy::too_many_arguments)]
 fn draw_scene_info_overlay(
     buf: &mut [u32],
     dw: usize,

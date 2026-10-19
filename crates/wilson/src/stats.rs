@@ -93,6 +93,8 @@ impl Stats {
     }
 
     /// A human-readable one-liner, e.g. `"3 sessions, 1h 5m total, reached day 7/11"`.
+    // The About dialog that uses this is a native Windows menu action.
+    #[cfg_attr(not(windows), allow(dead_code))]
     pub fn summary(&self) -> String {
         format!(
             "{} session(s), {} total, reached day {}/11",
@@ -104,6 +106,7 @@ impl Stats {
 }
 
 /// Format a number of seconds as `"Hh Mm"` (or `"Mm Ss"` / `"Ss"` for short spans).
+#[cfg_attr(not(windows), allow(dead_code))]
 pub fn format_duration(secs: u64) -> String {
     let (h, m, s) = (secs / 3600, (secs % 3600) / 60, secs % 60);
     if h > 0 {
