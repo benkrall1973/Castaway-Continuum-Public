@@ -1675,12 +1675,15 @@ mod tests {
 
     #[test]
     fn portable_ini_sits_beside_the_executable_or_screensaver() {
+        // `Path` follows the host platform's separator rules. A Windows path
+        // is one filename on Unix, so use a native fixture on each CI host.
+        #[cfg(windows)]
         let exe = Path::new(r"C:\Games\Johnny Castaway\JohnnyCastaway.scr");
+        #[cfg(not(windows))]
+        let exe = Path::new("/opt/johnny-castaway/JohnnyCastaway");
         assert_eq!(
             config_file_for_executable(exe),
-            Some(PathBuf::from(
-                r"C:\Games\Johnny Castaway\castaway-continuum.ini"
-            ))
+            Some(exe.parent().unwrap().join("castaway-continuum.ini"))
         );
     }
 
