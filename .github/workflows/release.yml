@@ -1,6 +1,6 @@
 name: Release
 
-# Build distributable binaries: the Windows screensaver (`wilson.scr`), a Linux binary
+# Build distributable binaries: the Windows screensaver (`CastawayContinuum.scr`), a Linux binary
 # and a macOS binary. Runs on a version tag (`v*`) — attaching the files to a GitHub
 # Release with auto-generated notes (`generate_release_notes`) — and can be triggered
 # manually (`workflow_dispatch`) to download the artifacts for testing.
@@ -32,27 +32,29 @@ jobs:
         uses: Swatinem/rust-cache@v2
 
       - name: Build
-        run: cargo build --release -p wilson
+        run: cargo build --release -p castaway-continuum
 
       - name: Package Windows folder
         # A Windows screensaver is just the executable with a .scr extension.
         # Ship an actual self-explanatory folder, not two mystery binaries.
         shell: pwsh
         run: |
-          $package = 'WilsonReborn-Windows-x86_64'
+          $package = 'CastawayContinuum-Windows-x86_64'
           New-Item -ItemType Directory -Force -Path "$package/data" | Out-Null
-          Copy-Item target/release/wilson.exe "$package/wilson.exe"
-          Copy-Item target/release/wilson.exe "$package/wilson.scr"
+          Copy-Item target/release/castaway-continuum.exe "$package/CastawayContinuum.exe"
+          Copy-Item target/release/castaway-continuum.exe "$package/CastawayContinuum.scr"
+          Copy-Item castaway-continuum.ini "$package/castaway-continuum.ini"
+          Copy-Item LICENSE "$package/LICENSE.txt"
           Copy-Item packaging/windows/README-WINDOWS.txt "$package/README-WINDOWS.txt"
           Copy-Item packaging/windows/data/PUT-ORIGINAL-FILES-HERE.txt "$package/data/PUT-ORIGINAL-FILES-HERE.txt"
-          Compress-Archive -Path "$package/*" -DestinationPath wilson-windows-x86_64.zip
+          Compress-Archive -Path "$package/*" -DestinationPath CastawayContinuum-Windows-x86_64.zip
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: wilson-windows
+          name: castaway-continuum-windows
           path: |
-            wilson-windows-x86_64.zip
+            CastawayContinuum-Windows-x86_64.zip
 
       - name: Attach to release
         # Only the linux job generates the release notes (see below). If both parallel
@@ -62,7 +64,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            wilson-windows-x86_64.zip
+            CastawayContinuum-Windows-x86_64.zip
 
   linux:
     name: Linux binary
@@ -80,16 +82,16 @@ jobs:
         uses: Swatinem/rust-cache@v2
 
       - name: Build
-        run: cargo build --release -p wilson
+        run: cargo build --release -p castaway-continuum
 
       - name: Package binary
-        run: tar -czf wilson-linux-x86_64.tar.gz -C target/release wilson
+        run: tar -czf CastawayContinuum-linux-x86_64.tar.gz -C target/release castaway-continuum
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: wilson-linux
-          path: wilson-linux-x86_64.tar.gz
+          name: castaway-continuum-linux
+          path: CastawayContinuum-linux-x86_64.tar.gz
 
       - name: Attach to release
         # Single source of the auto-generated release notes — the other jobs must NOT
@@ -98,7 +100,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-          files: wilson-linux-x86_64.tar.gz
+          files: CastawayContinuum-linux-x86_64.tar.gz
 
   macos:
     name: macOS binary
@@ -113,11 +115,11 @@ jobs:
         uses: Swatinem/rust-cache@v2
 
       - name: Build
-        run: cargo build --release -p wilson
+        run: cargo build --release -p castaway-continuum
 
       - name: Package binary
         # macos-latest is Apple Silicon, so this is an arm64 binary.
-        run: tar -czf wilson-macos-arm64.tar.gz -C target/release wilson
+        run: tar -czf CastawayContinuum-macos-arm64.tar.gz -C target/release castaway-continuum
 
       - name: Build .saver bundle
         run: bash crates/wilson-saver/macos/build-saver.sh
@@ -131,7 +133,7 @@ jobs:
         with:
           name: wilson-macos
           path: |
-            wilson-macos-arm64.tar.gz
+            CastawayContinuum-macos-arm64.tar.gz
             WilsonReborn.saver.zip
 
       - name: Attach to release
@@ -140,7 +142,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            wilson-macos-arm64.tar.gz
+            CastawayContinuum-macos-arm64.tar.gz
             WilsonReborn.saver.zip
 
   web:
