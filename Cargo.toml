@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/wilson-dgds",
+    "crates/wilson-engine",
+    "crates/wilson",
+    "crates/wilson-saver",
+    "crates/wilson-web",
+]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/benkrall1973/Castaway-Continuum-Private"
+authors = ["Castaway Continuum contributors"]
+
+[profile.release]
+lto = true
+codegen-units = 1

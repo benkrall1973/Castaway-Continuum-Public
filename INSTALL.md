@@ -42,6 +42,8 @@ required rights.
 
 ## License and attribution
 
-Castaway Continuum is GPL-3.0-or-later software and a fork of Wilson Reborn.
+Castaway Continuum is GPL-3.0-or-later software and a fork of
+[Wilson Reborn by Antigerme](https://github.com/antigerme/wilson-reborn).
+The complete matching source for this release is included in this repository.
 The original Johnny Castaway artwork, animation, music, and sound data remain
 copyright Sierra On-Line / Dynamix.

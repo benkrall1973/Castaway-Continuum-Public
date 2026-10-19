@@ -1,0 +1,35 @@
+[package]
+name = "wilson-web"
+description = "WASM/web frontend for Wilson Reborn — runs the engine in a browser (bring your own RESOURCE.* data)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[features]
+# Personal use: bake the user's RESOURCE.* into the .wasm (read at build time from
+# WILSON_EMBED_DATA, like the desktop `wilson` crate) so the page runs self-contained, with
+# no file picker. The data is copyright and is NEVER committed; off by default.
+embed-data = []
+
+[lib]
+# `cdylib` is what wasm-bindgen links; `rlib` lets the (empty, on non-wasm) crate sit in the
+# workspace build without complaint.
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wilson-engine = { path = "../wilson-engine" }
+wilson-dgds = { path = "../wilson-dgds" }
+
+# The web glue is only pulled for the wasm target, so a host `cargo build --workspace`
+# compiles this crate as an empty lib (no JS/wasm deps, no cost). See `src/lib.rs`.
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+# Read-only zip (deflate via miniz_oxide ⇒ wasm-clean) so the page can take the Internet
+# Archive scrantic-run.zip / scrantic-installer.zip directly, like the desktop `--data`.
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+# build.rs (embed-data only) reuses wilson-dgds to resolve the data dir / installer.
+[build-dependencies]
+wilson-dgds = { path = "../wilson-dgds" }

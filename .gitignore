@@ -1,0 +1,37 @@
+# Rust
+/target
+/.build-temp/
+**/*.rs.bk
+Cargo.lock.orig
+
+# Original (copyrighted) game data — never commit
+# Keep these exact original-data names out of Git.  Do not use broad
+# case-insensitive patterns here: on Windows `RESOURCE.*` also ignores the
+# Rust module `crates/wilson-dgds/src/resource.rs`.
+/RESOURCE.MAP
+/RESOURCE.001
+/RESOURCE.00$
+/SCRANTIC.SCR
+/SCRANTIC.SC$
+data/
+# The release-package placeholder is documentation, not game data.
+!/packaging/
+!/packaging/windows/
+!/packaging/windows/data/
+!/packaging/windows/data/PUT-ORIGINAL-FILES-HERE.txt
+assets-original/
+# Original test resources remain private and are never part of a public build
+# or release.
+/test-original-data/
+releases/*.exe
+# Reference implementations (third-party) are kept only locally, never committed —
+# clone the upstreams yourself (see docs/knowledge-base/06-projetos-de-referencia.md).
+# dist.zip (the encrypted test bundle) is copyrighted game data — never commit it.
+/repos/
+/dist.zip
+
+# Editors / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/

@@ -1,0 +1,4 @@
+Put your legally obtained Johnny Castaway RESOURCE.MAP and RESOURCE.001 files
+in this folder. They are required to run the Castaway Continuum build.
+
+Do not commit or redistribute the original Sierra/Dynamix data files.
