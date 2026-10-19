@@ -1295,6 +1295,11 @@ fn main() {
             (config::TestTime::Night, DayNight::Real24h) => 23,
         };
     }
+    // The native Windows menu can restart a run and replace this seed; other
+    // platforms never reassign it, so avoid an unused-mut lint there.
+    #[cfg(windows)]
+    let mut seed = fresh_run_seed();
+    #[cfg(not(windows))]
     let seed = fresh_run_seed();
     let mut show = Show::new(&archive, &palette, 640, 480, director, clock, seed);
     show.set_holiday_animations(&archive, cfg.holiday_animations);
