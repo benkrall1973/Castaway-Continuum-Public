@@ -1,18 +1,23 @@
 # Castaway Continuum V1.0.0 for Windows
 
-This folder contains the complete Castaway Continuum application package:
+This folder contains the Castaway Continuum application package:
 
 - `CastawayContinuum.exe` — configure and preview the screensaver.
 - `CastawayContinuum.scr` — installable Windows screensaver.
-- `castaway-continuum.ini` — saved settings, Favorites, and editable scene text.
+- `castaway-continuum.ini` - saved settings, Favorites, and editable scene text.
+- `INSTALL.md` - this guide.
 
 ## Install
 
-1. Extract this folder to a permanent location. Keep all three files together.
-2. Double-click `CastawayContinuum.exe` to configure display options and preview
+1. Extract this folder to a permanent location. Keep these four files together.
+2. Create a `data` folder beside them and copy your legally obtained Johnny
+   Castaway data into it. The folder must contain `RESOURCE.MAP` and
+   `RESOURCE.001`; keeping the original sound files with those resources is
+   recommended.
+3. Double-click `CastawayContinuum.exe` to configure display options and preview
    changes.
-3. Right-click `CastawayContinuum.scr` and choose **Install**.
-4. In Windows Screen Saver Settings, select **Castaway Continuum**.
+4. Right-click `CastawayContinuum.scr` and choose **Install**.
+5. In Windows Screen Saver Settings, select **Castaway Continuum**.
 
 Windows stores the selected SCR path and normally runs it from this folder. If
 you move the entire folder later, right-click the SCR and choose **Install**
@@ -31,8 +36,9 @@ key press closes it. That is intentional.
 
 This public package does **not** include Sierra/Dynamix resource files. Castaway
 Continuum needs a legally obtained original data set to display the animation.
-Place the original resource files beside the EXE/SCR or in a `data` subfolder.
-Do not redistribute those resource files without the required rights.
+Place the original resource files in the `data` subfolder described above, or
+beside the EXE/SCR. Do not redistribute those resource files without the
+required rights.
 
 ## License and attribution
 
