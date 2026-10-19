@@ -43,6 +43,7 @@ use std::process::Child;
 use std::rc::Rc;
 #[cfg(windows)]
 use std::sync::atomic::AtomicIsize;
+#[cfg(windows)]
 use std::sync::atomic::{AtomicU16, Ordering};
 use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
@@ -2256,6 +2257,7 @@ fn main() {
                                 // profile from Original to Custom. Update only those
                                 // checkmarks; replacing the full native menu here can
                                 // interrupt the live preview on Windows.
+                                #[cfg(windows)]
                                 refresh_profile_menu_checks(&window, &cfg);
                                 if window_mode_pending && cfg.debug {
                                     eprintln!("[wilson:debug] Preview queued window-mode change for next launch");
