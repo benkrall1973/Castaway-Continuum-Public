@@ -10,10 +10,13 @@ This folder contains the Castaway Continuum application package:
 ## Install
 
 1. Extract this folder to a permanent location. Keep these four files together.
-2. Create a `data` folder beside them and copy your legally obtained Johnny
-   Castaway data into it. The folder must contain `RESOURCE.MAP` and
-   `RESOURCE.001`; keeping the original sound files with those resources is
-   recommended.
+2. Create a `data` folder beside them. From a lawfully obtained, already
+   installed or extracted Johnny Castaway folder, copy **all** files into
+   `data`. This also works for an authorized Internet/archive download once it
+   has been extracted into an installation folder. The folder must contain
+   `RESOURCE.MAP` and `RESOURCE.001`; keeping the original sound and support
+   files with them is recommended. Do not use the legacy 16-bit installer
+   executable by itself.
 3. Double-click `CastawayContinuum.exe` to configure display options and preview
    changes.
 4. Right-click `CastawayContinuum.scr` and choose **Install**.
@@ -35,10 +38,10 @@ key press closes it. That is intentional.
 ## Original data
 
 This public package does **not** include Sierra/Dynamix resource files. Castaway
-Continuum needs a legally obtained original data set to display the animation.
-Place the original resource files in the `data` subfolder described above, or
-beside the EXE/SCR. Do not redistribute those resource files without the
-required rights.
+Continuum needs a legally obtained original installation folder to display the
+animation. Copy the folder's complete contents into the `data` subfolder
+described above, or place them beside the EXE/SCR. Do not redistribute those
+resource files without the required rights.
 
 ## License and attribution
 

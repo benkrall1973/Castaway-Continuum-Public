@@ -74,9 +74,17 @@ Run `CastawayContinuum.exe` to configure and preview. Right-click
 ## Original data is required
 
 This project does **not** include Johnny Castaway artwork, animations, music, or
-sound effects. Supply a legally obtained original data set containing
-`RESOURCE.MAP` and `RESOURCE.001`, normally in a `data` folder beside the EXE
-and SCR. See [docs/BUILD-WINDOWS.md](docs/BUILD-WINDOWS.md) for build details.
+sound effects. Use the complete folder from a lawfully obtained Johnny Castaway
+installation, including an authorized downloaded or archival installation that
+has already been extracted or installed. For the simplest setup, copy **all**
+files from that installation folder into a `data` folder beside the EXE and SCR.
+
+At minimum, `data` must contain `RESOURCE.MAP` and its matching
+`RESOURCE.001` file. Keeping the rest of the installation files together is
+recommended because it preserves optional sound and support data. Do not use the
+legacy 16-bit installer executable by itself; use the folder it produces after
+installation or extraction. See [docs/BUILD-WINDOWS.md](docs/BUILD-WINDOWS.md)
+for build details.
 
 ## Build from source
 

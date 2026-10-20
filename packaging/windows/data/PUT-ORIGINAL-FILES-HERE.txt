@@ -1,4 +1,9 @@
-Put your legally obtained Johnny Castaway RESOURCE.MAP and RESOURCE.001 files
-in this folder. They are required to run the Castaway Continuum build.
+Copy all files from a lawfully obtained, already installed or extracted Johnny
+Castaway folder into this folder. An authorized Internet/archive download is
+suitable once it has been extracted into an installation folder.
+
+At minimum, this folder must contain RESOURCE.MAP and RESOURCE.001. Keeping the
+complete folder contents also preserves optional sound and support files. Do not
+use the legacy 16-bit installer executable by itself.
 
 Do not commit or redistribute the original Sierra/Dynamix data files.

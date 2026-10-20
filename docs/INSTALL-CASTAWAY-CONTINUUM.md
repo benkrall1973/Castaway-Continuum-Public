@@ -20,9 +20,15 @@ The EXE is the normal configuration and preview application.
 ## Original resources
 
 Public distributions must not include Sierra/Dynamix resource data. To run a
-bring-your-own-data build, place the legally obtained `RESOURCE.MAP` and
-`RESOURCE.001` files in `data\`, beside the executable, or select their folder
-with `--data <path>`.
+bring-your-own-data build, use the complete folder from a lawfully obtained,
+already installed or extracted Johnny Castaway copy. Copy **all** files from
+that folder into `data\`, place them beside the executable, or select the folder
+with `--data <path>`. This includes authorized Internet/archive downloads once
+they have been extracted into an installation folder.
+
+At minimum, the folder must contain `RESOURCE.MAP` and its matching
+`RESOURCE.001` file. The legacy 16-bit installer executable by itself is not a
+replacement for an installed/extracted data folder.
 
 This private repository includes `test-original-data\` solely to reproduce the
 owner's embedded local Windows build. Do not redistribute those files unless you

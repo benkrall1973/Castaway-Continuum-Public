@@ -28,9 +28,16 @@ Controls
 Data and source
 ---------------
 The original data is copyrighted by Sierra On-Line / Dynamix and is not
-redistributed with this project. The complete corresponding source code and
-build instructions are available from this project's source repository.
-See BUILD-WINDOWS.md and INSTALL.md in the source tree for build details.
+redistributed with this project. Create a data folder beside the EXE and SCR,
+then copy all files from a lawfully obtained, already installed or extracted
+Johnny Castaway folder into it. This includes an authorized Internet/archive
+download after it has been extracted into an installation folder. At minimum,
+the data folder needs RESOURCE.MAP and RESOURCE.001. Do not use the legacy
+16-bit installer executable by itself.
+
+The complete corresponding source code and build instructions are available
+from this project's source repository. See BUILD-WINDOWS.md and INSTALL.md in
+the source tree for build details.
 
 Windows may show a SmartScreen warning because this program is not code-signed.
 Verify the supplied SHA256SUMS.txt before running a downloaded release.
