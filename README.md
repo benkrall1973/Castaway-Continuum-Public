@@ -38,6 +38,10 @@ Optional CRT presentation controls include scanlines, gentle-to-strong screen
 curvature, phosphor masks, bloom, color profiles, and horizontal softness. They
 are visual filters only: the source animation data is not altered.
 
+> **Performance:** CRT effects such as curvature, bloom, phosphor masks, and
+> horizontal softness increase rendering load. On lower-power PCs, use scanlines
+> only or disable CRT effects for smoother playback.
+
 ### Custom Settings and Scene Selector
 
 The Custom Settings window puts the controls that need a visual reference in one
