@@ -71,6 +71,11 @@ See [INSTALL.md](INSTALL.md) for the Windows package and screensaver setup.
 Run `CastawayContinuum.exe` to configure and preview. Right-click
 `CastawayContinuum.scr` and choose **Install** to register the screensaver.
 
+Before running it, create a `data` folder beside the EXE and SCR and copy the
+complete contents of a lawfully obtained, already installed or extracted Johnny
+Castaway folder into it. Do not use the legacy 16-bit installer executable by
+itself; use the installation folder it produces.
+
 ## Original data is required
 
 This project does **not** include Johnny Castaway artwork, animations, music, or
